@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Fit - Your Fitness Journey Starts Here</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="text-primary">CLICK</span><span class="text-light">FIT</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Equipment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nutrition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-text">
+            <h1 class="display-4 text-white mb-4 animated-text">Transform Your Body, <br>Transform Your Life</h1>
+            <p class="lead text-white mb-5">Start your fitness journey today with Click Fit's premium equipment and expert guidance.</p>
+            <button class="btn btn-primary btn-lg pulse-btn" data-bs-toggle="modal" data-bs-target="#registerModal">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Registration Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Create Your Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="userType" class="form-label">Account Type</label>
+              <select class="form-select" id="userType" required>
+                <option value="">Select account type</option>
+                <option value="customer">Customer</option>
+                <option value="trainer">Trainer</option>
+              </select>
+            </div>
+            <div class="alert alert-danger d-none" id="registerError"></div>
+            <div class="alert alert-success d-none" id="registerSuccess"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Daily Fact Section -->
+  <section class="daily-fact py-3 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="daily-fact" class="p-3 rounded shadow-sm bg-white">
+            <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            Loading daily fact...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features py-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Why Choose Click Fit?</h2>
+          <p class="section-subtitle">We offer the best fitness equipment and services</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3>Premium Equipment</h3>
+            <p>High-quality fitness equipment for home and commercial use.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Expert Guidance</h3>
+            <p>Professional advice from certified fitness trainers.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable delivery to your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products py-5 bg-light">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Featured Products</h2>
+          <p class="section-subtitle">Top-selling fitness equipment</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="http://localhost:3000/product-image/treadmill.jpg" alt="Professional Treadmill" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Pro Treadmill X1</h3>
+              <p class="price">$999.99</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="http://localhost:3000/product-image/dumbells.jpeg" alt="Professional Dumbbells" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Adjustable Dumbbells</h3>
+              <p class="price">$299.99</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="http://localhost:3000/product-image/stationarybike.jpg" alt="Professional Exercise Bike" class="img-fluid">
+            </div>
+            <div class="product-info">
+              <h3>Stationary Bike S3</h3>
+              <p class="price">$599.99</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="upload-section py-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Share Your Fitness Journey</h2>
+          <p class="section-subtitle">Upload your workout photos and inspire others</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div id="upload-area" class="upload-area text-center p-5 mb-4">
+            <i class="fas fa-cloud-upload-alt fa-4x mb-3"></i>
+            <h3>Drag & Drop Image Here</h3>
+            <p>or</p>
+            <button type="button" id="browse-button" class="btn btn-outline-primary">Browse Files</button>
+            <input type="file" id="file-input" accept="image/*" hidden>
+          </div>
+          
+          <div id="upload-preview-container" class="d-none mb-4">
+            <div class="card">
+              <div class="card-header">
+                Preview
+              </div>
+              <div class="card-body">
+                <div id="upload-preview" class="text-center"></div>
+                <div class="text-center mt-3">
+                  <button id="clear-preview" class="btn btn-outline-secondary me-2">Clear</button>
+                  <button id="upload-button" class="btn btn-primary">Upload Image</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="upload-success" class="alert alert-success d-none" role="alert">
+            <i class="fas fa-check-circle me-2"></i> Image uploaded successfully!
+          </div>
+          
+          <div id="uploaded-image-container" class="d-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials py-5 bg-light">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title">What Our Customers Say</h2>
+          <p class="section-subtitle">Read testimonials from satisfied customers</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Click Fit's equipment has transformed my home workout experience. The quality is exceptional!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&q=80" alt="John Smith" class="rounded-circle">
+              <div>
+                <h4>John Smith</h4>
+                <p>Fitness Enthusiast</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"The customer service at Click Fit is outstanding. They helped me choose the perfect equipment for my needs."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&q=80" alt="Sarah Johnson" class="rounded-circle">
+              <div>
+                <h4>Sarah Johnson</h4>
+                <p>Personal Trainer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"I've been using Click Fit equipment for my gym for years. Durable, reliable, and my clients love it!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&q=80" alt="Mike Williams" class="rounded-circle">
+              <div>
+                <h4>Mike Williams</h4>
+                <p>Gym Owner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="text-white">CLICK<span class="text-primary">FIT</span></h3>
+          <p class="text-white-50">Your one-stop shop for premium fitness equipment and expert guidance.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5 class="text-white mb-4">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5 class="text-white mb-4">Products</h5>
+          <ul class="footer-links">
+            <li><a href="#">Treadmills</a></li>
+            <li><a href="#">Exercise Bikes</a></li>
+            <li><a href="#">Dumbbells</a></li>
+            <li><a href="#">Benches</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h5 class="text-white mb-4">Newsletter</h5>
+          <p class="text-white-50">Subscribe to our newsletter for the latest updates and offers.</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4 bg-secondary">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-white-50 mb-0">&copy; 2023 Click Fit. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="text-white-50 mb-0">Terms of Service | Privacy Policy</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
